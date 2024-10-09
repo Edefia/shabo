@@ -21,4 +21,44 @@
 
  
 
+  const ratings = document.querySelectorAll('.rating');
 
+  ratings.forEach((rating) => {
+      const stars = rating.querySelectorAll('.star');
+      let clicked = false;
+      let selectedIndex = -1;
+  
+      stars.forEach((star, index) => {
+          star.addEventListener('click', () => {
+              clicked = true;
+              selectedIndex = index;
+              stars.forEach((s, i) => {
+                  if (i <= selectedIndex) {
+                      s.classList.add('active');
+                  } else {
+                      s.classList.remove('active');
+                  }
+              });
+          });
+  
+          star.addEventListener('mouseover', () => {
+              if (!clicked) {
+                  stars.forEach((s, i) => {
+                      if (i <= index) {
+                          s.classList.add('active');
+                      } else {
+                          s.classList.remove('active');
+                      }
+                  });
+              }
+          });
+  
+          star.addEventListener('mouseout', () => {
+              if (!clicked) {
+                  stars.forEach((s) => {
+                      s.classList.remove('active');
+                  });
+              }
+          });
+      });
+  });

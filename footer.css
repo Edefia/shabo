@@ -56,13 +56,13 @@
     display: inline-block;
     float: left;
     width: 50%;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     
   }
     .footer-widget ul li a {
     color: #878787;
     text-transform: capitalize;
-    font-size: clamp(12px, 2.5vw, 16px); 
+    font-size: clamp(12px, 2.5vw, 14px); 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   

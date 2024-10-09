@@ -20,3 +20,40 @@ introsplitTypes.forEach(function (_char, i) {
 
   });
 });
+var ratings = document.querySelectorAll('.rating');
+ratings.forEach(function (rating) {
+  var stars = rating.querySelectorAll('.star');
+  var clicked = false;
+  var selectedIndex = -1;
+  stars.forEach(function (star, index) {
+    star.addEventListener('click', function () {
+      clicked = true;
+      selectedIndex = index;
+      stars.forEach(function (s, i) {
+        if (i <= selectedIndex) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+    });
+    star.addEventListener('mouseover', function () {
+      if (!clicked) {
+        stars.forEach(function (s, i) {
+          if (i <= index) {
+            s.classList.add('active');
+          } else {
+            s.classList.remove('active');
+          }
+        });
+      }
+    });
+    star.addEventListener('mouseout', function () {
+      if (!clicked) {
+        stars.forEach(function (s) {
+          s.classList.remove('active');
+        });
+      }
+    });
+  });
+});

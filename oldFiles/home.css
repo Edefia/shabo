@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.61);
+    position: fixed;
+    /* margin-bottom: 60px; */
+    z-index: 1;
+    animation: navbar-animation 0.3s forwards;
+}
+
+.logo a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.search-box {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    background-color: #444;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 13px;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+}
+@keyframes navbar-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+       
+    50% {
+        opacity: 0.5;
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 1rem;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #444;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content li a:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    animation: dropdown-animation 0.3s forwards; 
+    list-style: none;
+}
+@keyframes dropdown-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+       
+    }
+       
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+      
+    }
+    }
+
+/* Responsive menu */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Musician container */
+.musician-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.musician-card {
+    flex: 1 1 calc(33% - 40px);
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.musician-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.musician-info {
+    margin-top: 15px;
+}
+
+.rating {
+    margin-top: 15px;
+}
+
+.rating .star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.rating .star:hover,
+.rating .star.active {
+    color: gold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .musician-card {
+        flex: 1 1 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-box {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+    }
+    .musician-card {
+        flex: 1 1 100%;
+    }
+
+    .carousel-container img {
+        height: 200px;
+    }
+}
+
+
+/* Bio Information */
+.musician-info {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.musician-info p {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px 0;
+}
+
+.musician-info strong {
+    min-width: 150px; /* Fixed width for strong elements */
+    text-align: left;
+}
+
+.musician-info span {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.rating {
+    margin-top: 15px;
+}
+
+/* Star rating remains the same */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+}

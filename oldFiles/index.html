@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicians Arena</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Musicians Arena</a>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li class="dropdown">
+                    <a href="#">Instrumentalists</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Drummers</a></li>
+                        <li><a href="#">Bassists</a></li>
+                        <li><a href="#">Keyboard Players</a></li>
+                        <li><a href="#">Lead Guitarists</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Lessons</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Drum Lessons</a></li>
+                        <li><a href="#">Bass Lessons</a></li>
+                        <li><a href="#">Keyboard Lessons</a></li>
+                        <li><a href="#">Lead Guitar Lessons</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Digital Products</a></li>
+                <li><a href="#">Register as a Member</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="musician-container">
+            <div class="musician-card">
+                <!-- Carousel for Musician Images -->
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <img src="images/picture.JPG" alt="Musician Picture 1">
+                        <img src="images/picture.jpg" alt="Musician Picture 2">
+                        <img src="images/picture3.jpg" alt="Musician Picture 3">
+                        <img src="images/picture4.jpg" alt="Musician Picture 4">
+                        <img src="images/picture5.jpg" alt="Musician Picture 5">
+                        <img src="images/picture6.jpg" alt="Musician Picture 6">
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+                <div class="musician-info">
+                    <h3>Name: John Doe</h3>
+                    <p><strong>Stage Name:</strong> GuitarHero</p>
+                    <p><strong>Location:</strong> Los Angeles, CA</p>
+                    <p><strong>Social Media:</strong> @guitarhero (Instagram)</p>
+                    <p><strong>Portfolio:</strong> <a href="#">View Portfolio</a></p>
+                    <p><strong>Artists Worked With:</strong> The Beatles, Queen</p>
+                    <p><strong>Bio:</strong> John Doe is an experienced guitarist with over 20 years in the music industry.</p>
+                </div>
+                <div class="rating">
+                    <h4>Rate This Musician:</h4>
+                    <span class="star" data-star="1">&#9733;</span>
+                    <span class="star" data-star="2">&#9733;</span>
+                    <span class="star" data-star="3">&#9733;</span>
+                    <span class="star" data-star="4">&#9733;</span>
+                    <span class="star" data-star="5">&#9733;</span>
+                    <span class="star" data-star="6">&#9733;</span>
+                </div>
+            </div>
+
+            <div class="musician-card">
+                <img src="images/picture.JPG" alt="Musician Picture">
+                <div class="musician-info">
+                    <h3>Name: Sarah Smith</h3>
+                    <p><strong>Stage Name:</strong> DrumQueen</p>
+                    <p><strong>Location:</strong> New York, NY</p>
+                    <p><strong>Social Media:</strong> @drumqueen (Twitter)</p>
+                    <p><strong>Portfolio:</strong> <a href="#">View Portfolio</a></p>
+                    <p><strong>Artists Worked With:</strong> Metallica, Coldplay</p>
+                    <p><strong>Bio:</strong> Sarah Smith is a drummer known for her powerful beats and unique style.</p>
+                </div>
+                <div class="rating">
+                    <h4>Rate This Musician:</h4>
+                    <span class="star" data-star="1">&#9733;</span>
+                    <span class="star" data-star="2">&#9733;</span>
+                    <span class="star" data-star="3">&#9733;</span>
+                    <span class="star" data-star="4">&#9733;</span>
+                    <span class="star" data-star="5">&#9733;</span>
+                    <span class="star" data-star="6">&#9733;</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+    <script>// Toggle menu for mobile view
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Rating System
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', function() {
+                const stars = this.parentNode.querySelectorAll('.star');
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < this.getAttribute('data-star'); i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+        });
+
+        ScriptProcessorNode
+        </script>
+<script>
+    let index = 0;
+    const images = document.querySelectorAll('.carousel-container img');
+    const totalImages = images.length;
+    
+    document.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % totalImages; // Loop back to the first image
+        updateCarousel();
+    });
+    
+    document.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + totalImages) % totalImages; // Loop to the last image
+        updateCarousel();
+    });
+    
+    function updateCarousel() {
+        const offset = -index * 100; // Adjust by image width (100% for each image)
+        document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+    }
+    </script>
+</body>
+</html>

@@ -95,7 +95,7 @@
   }
   .copyright-text p {
     margin: 0;
-    font-size: clamp(10px, 2.5vw, 16px);    
+    font-size: clamp(10px, 2.5vw, 14px);    
     color: #878787;
     text-align: center;
   }

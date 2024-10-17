@@ -94,6 +94,16 @@ body {
     display: none;
 }
 
+.menu-toggle:hover{
+    color: #96ff61;
+    transition: 0.2s linear;
+    scale: 1.2;
+}
+.menu-toggle:not(:hover){
+    color: white;
+    transition: 0.2s linear;
+    scale: 1.0;
+}
 .nav-links li a:hover {
     background-color: #555;
 }
@@ -120,19 +130,36 @@ body {
     .nav-links {
         display: none;
         flex-direction: column;
+        position: absolute;
+        /* top: inherit;  */
+        left: 0;
         width: 100%;
-    }
+        background-color: #333;
+        gap: 0;
 
+    }
+    
+    
     .nav-links li {
         width: 100%;
+        /* padding: 3px; */
+        
     }
 
     .nav-links li a {
         display: block;
-        padding: 15px;
+        padding: 8px 15px;
+        
         text-align: left;
+        background-color: #333;
     }
 
+    .nav-links li a:hover{
+        background-color: #444;
+    }
+    .nav-links li ul{
+        margin-top: 0;
+    }
     .menu-toggle {
         display: block;
     }
@@ -143,7 +170,9 @@ body {
 
     .dropdown-content {
         position: static;
+        /* margin-top: 0; */
     }
+    
     
 }
 

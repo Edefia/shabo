@@ -34,7 +34,7 @@ html {
 .hero-section {
   margin: 0;
   background-color: #24272e;
-  z-index: 1;
+  z-index: -1;
   background-image: url("https://www.yudiz.com/codepen/photography-banner/frame.png");
   
 }
@@ -124,7 +124,7 @@ html {
 /* button */
 .book-link {
   margin: 40px 0 0;
-  padding: 0;
+  padding: 5px;
   border: 0;
   font-size: 56px;
   line-height: 1;

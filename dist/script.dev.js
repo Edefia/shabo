@@ -1,6 +1,6 @@
 "use strict";
 
-// TypeScript
+// TypeScript for hero section
 var typing = new Typed(".text", {
   strings: ["artists.", "Drummers.", "Guitarists.", "Digital Products.", "Lessons.", "Bassists.", "Keyboard Players."],
   typeSpeed: 150,
@@ -19,7 +19,8 @@ introsplitTypes.forEach(function (_char, i) {
     duration: 0.3 // full text duration
 
   });
-});
+}); // code for the rating stars
+
 var ratings = document.querySelectorAll('.rating');
 ratings.forEach(function (rating) {
   var stars = rating.querySelectorAll('.star');
@@ -73,9 +74,21 @@ function adjustNavLinksPosition() {
 } // Call the function on page load
 
 
-window.onload = adjustNavLinksPosition; // Optional: Call the function on window resize to adjust if the navbar height changes
+window.onload = function () {
+  if (window.innerWidth <= 960) {
+    // Assuming 960 is the mobile view breakpoint
+    adjustNavLinksPosition();
+  }
+}; // Optional: Call the function on window resize to adjust if the navbar height changes
 
-window.onresize = adjustNavLinksPosition;
+
+window.onresize = function () {
+  if (window.innerWidth <= 960) {
+    // Assuming 960 is the mobile view breakpoint
+    adjustNavLinksPosition();
+  }
+};
+
 document.getElementById('mobile-menu').addEventListener('click', function () {
   var navLinks = document.getElementById('nav-links');
   var icon = this.querySelector('i'); // Get the icon inside the toggle button

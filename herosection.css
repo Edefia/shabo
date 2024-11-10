@@ -237,7 +237,7 @@ html {
   height: 388px;
   width: 388px;
   margin: 0 0 0 auto;
-  margin-right: -14px;
+  /* margin-right: -14px; */
   display: block;
   position: relative;
   z-index: 1;

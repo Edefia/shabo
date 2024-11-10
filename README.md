@@ -15,3 +15,7 @@ Also I figured instead of putting the rate on the home page, we should also put 
 Does this also meet your expectations?  ________
 
 Lastly i am going to send you a link from my amazon s3 bucket for you to view how far the project has gotten to.
+
+
+NAMING OF THE FILES.
+1. Register as a member page file is named as register in short for the html

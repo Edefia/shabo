@@ -31,6 +31,7 @@ body {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .search-box {
@@ -63,6 +64,10 @@ body {
   .nav-links li:hover ul {
     display: block;
   }
+
+  .nav-links li a{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
   
   .nav-links li ul li {
     width: 100%;
@@ -72,6 +77,7 @@ body {
     padding: 10px;
     display: block;
     width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
   .nav-links li ul li a:hover {

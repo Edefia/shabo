@@ -89,6 +89,7 @@ section {
       border-radius: 1.25rem;
       border-bottom-right-radius: 0;
       overflow: hidden;
+      z-index: 0;
 
       .box {
         width: 100%;
@@ -100,11 +101,13 @@ section {
         .imgBox {
           position: absolute;
           inset: 0;
+       
 
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            
           }
         }
 

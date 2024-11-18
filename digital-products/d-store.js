@@ -32,18 +32,17 @@ window.onresize = function() {
 document.getElementById('mobile-menu').addEventListener('click', function() {
     const navLinks = document.getElementById('nav-links');
     const icon = this.querySelector('i'); // Get the icon inside the toggle button
-
+   
+    // Toggle the display of the nav links
     if (navLinks.style.display === 'flex') {
         navLinks.style.display = 'none'; // Hide menu
-        icon.classList.remove('fa-solid','fa-xmark'); // Remove both classes
+        icon.classList.remove('fa-solid', 'fa-xmark'); // Remove both classes
         icon.classList.add('fas', 'fa-bars'); // Add the hamburger icon class
-    } 
-    
-    else {
+
+    } else {
         navLinks.style.display = 'flex'; // Show menu
         icon.classList.remove('fas', 'fa-bars'); // Remove both classes
         icon.classList.add('fa-solid', 'fa-xmark'); // Add the X icon class
     }
 });
-
 

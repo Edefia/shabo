@@ -68,6 +68,7 @@ section {
 
       .content {
         padding: 0.938rem 0.625rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
         h3 {
           text-transform: capitalize;

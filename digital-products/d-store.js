@@ -46,3 +46,28 @@ document.getElementById('mobile-menu').addEventListener('click', function() {
     }
 });
 
+
+    // Ensure GSAP and ScrollTrigger are loaded
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hide loader after the page is fully loaded
+    window.onload = function() {
+        // Hide the loader after a short delay (optional)
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+        }, 500); // Adjust the delay as needed (500 ms in this case)
+    };
+
+    gsap.utils.toArray('.card').forEach((card) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 80%', // Start the animation when the top of the card is 80% from the top of the viewport
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50, // Move the card from below
+            duration: 0.5
+        });
+    });
+
